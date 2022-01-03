@@ -1,0 +1,54 @@
+﻿@model ExaBookDB.Models.Author
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Author</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AuthorFirstName" class="control-label"></label>
+                <input asp-for="AuthorFirstName" class="form-control" />
+                <span asp-validation-for="AuthorFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorLastName" class="control-label"></label>
+                <input asp-for="AuthorLastName" class="form-control" />
+                <span asp-validation-for="AuthorLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorAge" class="control-label"></label>
+                <input asp-for="AuthorAge" class="form-control" />
+                <span asp-validation-for="AuthorAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorNationality" class="control-label"></label>
+                <input asp-for="AuthorNationality" class="form-control" />
+                <span asp-validation-for="AuthorNationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorAlive" class="control-label"></label>
+                <input asp-for="AuthorAlive" class="form-control" />
+                <span asp-validation-for="AuthorAlive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

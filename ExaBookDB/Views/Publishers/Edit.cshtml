@@ -1,0 +1,49 @@
+﻿@model ExaBookDB.Models.Publisher
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Publisher</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PublisherName" class="control-label"></label>
+                <input asp-for="PublisherName" class="form-control" />
+                <span asp-validation-for="PublisherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublisherAdress" class="control-label"></label>
+                <input asp-for="PublisherAdress" class="form-control" />
+                <span asp-validation-for="PublisherAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublisherPhoneNumber" class="control-label"></label>
+                <input asp-for="PublisherPhoneNumber" class="form-control" />
+                <span asp-validation-for="PublisherPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublisherEmail" class="control-label"></label>
+                <input asp-for="PublisherEmail" class="form-control" />
+                <span asp-validation-for="PublisherEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
